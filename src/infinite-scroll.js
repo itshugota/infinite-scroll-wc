@@ -73,13 +73,15 @@ export default customElements.define('infinite-scroll',
     }
 
     connectedCallback() {
-      this.initialload = this.initialload || true;
-      this.hasmore = this.hasmore || false;
-      this.pagestart = this.pagestart || 0;
-      this.pageLoaded = this.pagestart;
-      this.threshold = this.threshold || 250;
-      this.usewindow = this.usewindow || false;
-      this.attachScrollListener();
+      setTimeout(() => {
+        this.initialload = this.initialload || true;
+        this.hasmore = this.hasmore || false;
+        this.pagestart = this.pagestart || 0;
+        this.pageLoaded = this.pagestart;
+        this.threshold = this.threshold || 250;
+        this.usewindow = this.usewindow || false;
+        this.attachScrollListener();
+      }, 0);
     }
 
     disconnectedCallback() {
